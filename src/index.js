@@ -5,20 +5,20 @@ import App from './App';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 
+  const initialState = 0
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-const reducer = (state, action) =>{
-  if(action.type === 'plus'){
-    return state + 1
+const reducer = (state = initialState, action) =>{
+  switch(action.type){
+    case 'plus':
+      return state + action.payload;
+    case 'minus':
+      return state - 1;
+    case 'reset':
+      return 0;  
   }
-  if(action.type === 'minus'){
-    return state - 1
-  }
-  if(action.type === 'reset'){
-    return state
-  }
-  return 0
+  return state
   }
 
 const store = createStore(reducer)

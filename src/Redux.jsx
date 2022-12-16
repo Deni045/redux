@@ -10,6 +10,7 @@ function Redux() {
     const handlerPlus = () =>{
       dispatch({
         type: 'plus',
+        payload: 5
       
       })
     }
