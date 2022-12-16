@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import Delete from "./Delete";
+import Reset from "./Reset";
 
 function Redux() {
 
@@ -7,9 +7,16 @@ function Redux() {
   const dispatch = useDispatch()
   const name = useSelector(state => state)
 
-    const handlerClick = () =>{
+    const handlerPlus = () =>{
       dispatch({
-        type: 'change',
+        type: 'plus',
+      
+      })
+    }
+
+    const handlerMinus = () =>{
+      dispatch({
+        type: 'minus',
       
       })
     }
@@ -17,12 +24,16 @@ function Redux() {
   return (
     <div>
        <div>
-        something something: {name} 
+        {name} 
       </div>
-      <button onClick={handlerClick}> 
-        click
+      <button onClick={handlerPlus}> 
+        +
       </button>
-      <Delete/>
+      <button onClick={handlerMinus}> 
+        -
+      </button>
+
+      <Reset/>
     </div>
    
   );

@@ -9,14 +9,16 @@ import { createStore } from 'redux';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 const reducer = (state, action) =>{
-  if(action.type === 'change'){
-    return 'nnn'
+  if(action.type === 'plus'){
+    return state + 1
   }
-
-  if(action.type === 'delete'){
-    return ' '
+  if(action.type === 'minus'){
+    return state - 1
   }
-  return 'mmm'
+  if(action.type === 'reset'){
+    return state
+  }
+  return 0
   }
 
 const store = createStore(reducer)

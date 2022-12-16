@@ -1,22 +1,22 @@
 import { useDispatch } from "react-redux";
 
-function Delete() {
+function Reset() {
 
     const dispatch = useDispatch()
 
-    const remove = () =>{
+    const reset = () =>{
         dispatch({
-            type: 'delete'
+            type: 'reset'
         })
     }
 
   return (
     <div>
-        <button onClick={remove}>
-            delete
+        <button onClick={reset}>
+            reset
         </button>
     </div>
   );
 }
 
-export default Delete;
+export default Reset;
